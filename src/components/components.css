@@ -1,3 +1,6 @@
+body {
+    background: #D5EAFC;
+}
 .container {
     margin-top: 10%;
     width: 100%;
@@ -6,8 +9,11 @@
 }
 
 .formDiv {
-    width: 764px;
+    position: relative;
+    background: #FEFEFE;
+    width: 564px;
     padding: 30px;
+    padding-top: 100px;
     border-radius: 10px;
     -webkit-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
     -moz-box-shadow: -1px 8px 15px 0 rgba(0, 0, 0, 0.44);
@@ -20,5 +26,15 @@
 }
 
 .creditCard{
-    margin-bottom: 10%;
+    position: absolute;
+    width: 300px;
+    top: -100px;
+    left: 132px;
+}
+
+.rccs, .rccs__card, .rccs__card--unknown, .rccs__card--front, .rccs__card--back {
+    border-radius: 5px;
+    background-image: url("../../resources/background.jpg") !important;
+    background-size: cover !important;
+    background-repeat: no-repeat;
 }
