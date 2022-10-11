@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React from 'react';
 import "./components.css"
 import useForm from "../customHooks/useForm";
 import {Button, Form, Alert, Row, Col, Input, FormGroup} from "reactstrap";
@@ -7,12 +7,7 @@ import Cards from "react-credit-cards";
 
 const CustomCardForm = () => {
     const {handleChange, handleFocus, handleSubmit, values, errors} = useForm();
-    // const cardNumber = useRef()
-    //
-    //
-    // // useEffect(() => {
-    // //     React.findDOMNode(cardNumber).mask("0000 0000 0000 0000")
-    // // },[values.cardNumber])
+
 
     const months = [
         {value: '01', label: "January"},
