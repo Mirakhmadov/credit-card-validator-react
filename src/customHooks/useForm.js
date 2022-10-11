@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useState} from 'react'
 import validateInfo from '../validator/validateInfo';
 
 const useForm = () => {
@@ -12,29 +12,32 @@ const useForm = () => {
     })
 
     const [errors, setErrors] = useState({
-        show : false
+        show: false
     })
 
     const handleFocus = (e) => {
-        setValues({ 
+        setValues({
             ...values,
             focus: (e.target.name === 'cardSecurityCode') ? 'cvc' : e.target.name
         });
     }
 
     const handleChange = e => {
-        let { name, value, maxLength, localName} = e.target
+        let {name, value, maxLength, localName} = e.target
 
-        if (value.length <= maxLength || localName === "select"){
-            if (name === "cardNumber" && value){
+        if (value.length <= maxLength || localName === "select") {
+            if (name === "cardNumber") {
+
                 value = value.split(" ").join("")
-                value = value.match(/.{1,4}/g).join(" ")
+                if (isNumber(value)){
+                    value = value.match(/.{1,4}/g).join(" ")
+                }
             }
             setValues({
                 ...values,
                 [name]: value
             })
-        }else {
+        } else {
             e.target.value = values[name]
         }
 
@@ -46,8 +49,13 @@ const useForm = () => {
 
         console.log(values)
     };
-    
-    return { handleChange, handleFocus, handleSubmit, values, errors };
+
+    const isNumber = (str) => {
+        let pattern = /^\d+\.?\d*$/;
+        return pattern.test(str);  // returns a boolean
+    }
+
+    return {handleChange, handleFocus, handleSubmit, values, errors};
 };
 
 export default useForm; 

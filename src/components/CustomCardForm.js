@@ -87,8 +87,7 @@ const CustomCardForm = () => {
                                                 id="cardExpirationMonth"
                                                 data-testid="cardExpirationMonth"
                                                 name="cardExpirationMonth"
-                                                value={values.cardExpirationMonth}
-                                                onChange={handleChange}
+                                                onKeyUp={handleChange}
                                                 onFocus={handleFocus}
                                                 isValid={errors.cexpM}
                                             >
@@ -106,7 +105,6 @@ const CustomCardForm = () => {
                                                 id="cardExpirationYear"
                                                 data-testid="cardExpirationYear"
                                                 name="cardExpirationYear"
-                                                value={values.cardExpirationYear}
                                                 onChange={handleChange}
                                                 onFocus={handleFocus}
                                                 isValid={errors.cexpY}
