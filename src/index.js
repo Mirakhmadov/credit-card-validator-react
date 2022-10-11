@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import "react-credit-cards/es/styles-compiled.css";
-import CustomCard from "./components/CustomCard";
+import CustomCardForm from "./components/CustomCardForm";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <CustomCard/>
+        <CustomCardForm/>
     </React.StrictMode>
 );

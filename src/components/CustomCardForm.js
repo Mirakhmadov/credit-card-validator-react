@@ -1,12 +1,18 @@
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import "./components.css"
 import useForm from "../customHooks/useForm";
 import {Button, Form, Alert, Row, Col, Input, FormGroup} from "reactstrap";
 import Cards from "react-credit-cards";
 
 
-const CustomCard = () => {
+const CustomCardForm = () => {
     const {handleChange, handleFocus, handleSubmit, values, errors} = useForm();
+    // const cardNumber = useRef()
+    //
+    //
+    // // useEffect(() => {
+    // //     React.findDOMNode(cardNumber).mask("0000 0000 0000 0000")
+    // // },[values.cardNumber])
 
     const months = [
         {value: '01', label: "January"},
@@ -48,7 +54,7 @@ const CustomCard = () => {
                         Card Number
                         <FormGroup>
                             <Input
-                                type="number"
+                                type="text"
                                 id="cardNumber"
                                 data-testid="cardNumber"
                                 name="cardNumber"
@@ -56,13 +62,14 @@ const CustomCard = () => {
                                 onChange={handleChange}
                                 onFocus={handleFocus}
                                 isValid={errors.cnumber}
-                                maxLength={16}
+                                maxLength={19}
                             />
                         </FormGroup>
 
                         <FormGroup>
                             Card Name
                             <Input
+                                style={{textTransform : "uppercase"}}
                                 type="text"
                                 id="cardName"
                                 data-testid="cardName"
@@ -158,4 +165,4 @@ const CustomCard = () => {
     );
 }
 
-export default CustomCard;
+export default CustomCardForm;

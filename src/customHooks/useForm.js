@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import validateInfo from './validateInfo';
+import validateInfo from '../validator/validateInfo';
 
 const useForm = () => {
     const [values, setValues] = useState({
@@ -23,8 +23,13 @@ const useForm = () => {
     }
 
     const handleChange = e => {
-        const { name, value, maxLength, localName} = e.target
+        let { name, value, maxLength, localName} = e.target
+
         if (value.length <= maxLength || localName === "select"){
+            if (name === "cardNumber" && value){
+                value = value.split(" ").join("")
+                value = value.match(/.{1,4}/g).join(" ")
+            }
             setValues({
                 ...values,
                 [name]: value
