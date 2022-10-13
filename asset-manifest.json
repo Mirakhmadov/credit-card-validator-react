@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/credit-card-validator-react/static/css/main.517afc94.css",
+    "main.js": "/credit-card-validator-react/static/js/main.94855c6b.js",
+    "static/media/background.jpg": "/credit-card-validator-react/static/media/background.eac50b712252536b4345.jpg",
+    "index.html": "/credit-card-validator-react/index.html",
+    "main.517afc94.css.map": "/credit-card-validator-react/static/css/main.517afc94.css.map",
+    "main.94855c6b.js.map": "/credit-card-validator-react/static/js/main.94855c6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.517afc94.css",
+    "static/js/main.94855c6b.js"
+  ]
+}
